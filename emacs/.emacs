@@ -1,5 +1,4 @@
 (menu-bar-mode -1)
-(tool-bar-mode -1)
 
 (global-auto-revert-mode)
 
@@ -55,24 +54,28 @@
 (setq
     backup-by-copying t      ; don't clobber symlinks
     backup-directory-alist
-    '(("." . "~/.saves"))    ; don't litter my fs tree
+      '(("." . "~/.saves"))  ; don't litter my fs tree
     delete-old-versions t
     kept-new-versions 6
     kept-old-versions 2
     version-control t)       ; use versioned backups
 
 ; (global-linum-mode t)
-
 (global-set-key (kbd "C-?") 'help-command)
 (global-set-key (kbd "M-?") 'mark-paragraph)
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "M-h") 'backward-kill-word)
 
 ;; Turn on tabs
-;;
 (setq-default indent-tabs-mode nil)
-(setq default-tab-width 2)
-(setq tab-width 2)
-(setq c-basic-indent 2)
-(setq c-basic-offset 2)
+(setq default-tab-width 4)
+(setq tab-width 4)
+(setq c-basic-indent 4)
+(setq c-basic-offset 4)
 
+(require 'go-mode-autoloads)
+
+(setq auto-indent-assign-indent-level-variables nil)
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'spolsky t)
