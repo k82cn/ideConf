@@ -1,6 +1,6 @@
 #!/bin/sh
 
-FILES="cpp c proto cc hpp h idl inl java go"
+FILES="cpp c proto cc hpp h idl inl java go sh"
 
 rm -f cscope.files cscope.out
 
@@ -8,7 +8,7 @@ rm -f cscope.files cscope.out
 
 for i in $FILES
 do
-  find `pwd` -name "*.$i" >> cscope.files
+  find . -name "*.$i" >> cscope.files
 done
 
 cscope -b
