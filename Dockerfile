@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER Klaus Ma <klaus1982.cn@gmail.com>
 
 # Install basic tools.
-RUN apt-get update && apt-get install -y vim gdb cscope make curl tar gzip git build-essential pstack
+RUN apt-get update && apt-get install -y vim gdb cscope make curl tar gzip git build-essential pstack vim-syntax-go
 
 # Install docker client.
 RUN apt-get install -y apt-transport-https ca-certificates && \
