@@ -9,7 +9,10 @@ RUN curl https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz | tar 
 ENV GOROOT /usr/local/go
 ENV GOPATH /usr/local/gopath
 
-ENV PATH $GOROOT/bin:$GOPATH/bin:$PATH
+RUN curl -L https://github.com/coreos/etcd/releases/download/v3.0.13/etcd-v3.0.13-linux-amd64.tar.gz | tar xz
+ENV ETCD_HOME /usr/local/etcd-v3.0.13-linux-amd64
+
+ENV PATH $ETCD_HOME:$GOROOT/bin:$GOPATH/bin:$PATH
 
 WORKDIR /root/
 
