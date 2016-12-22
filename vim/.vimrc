@@ -9,8 +9,8 @@ set cscopequickfix=c-,d-,e-,g-,i-,s-,t-
 " set list
 "
 " set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set autoindent
 
 " set cindent
@@ -32,8 +32,20 @@ nmap <c-l> :only<cr>
 
 nmap <c-t> :WMToggle<cr> 
 
-nmap ]s :cs f s <C-R>=expand("<cword>")<CR><CR>
-nmap ]r :cs reset <CR><CR>
+if has("cscope")
+	set csto=0
+	set cst
+	set nocsverb
+	" add any database in current directory
+	if filereadable("cscope.out")
+		cs add cscope.out
+	endif
+
+	set csverb
+
+	nmap ]s :cs f s <C-R>=expand("<cword>")<CR><CR> :cw <CR><CR>
+	nmap ]r :cs reset <CR><CR>
+endif
 
 nmap 8 :cn <CR><CR>
 nmap 9 :cp <CR><CR>
