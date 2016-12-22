@@ -8,19 +8,20 @@ set cscopequickfix=c-,d-,e-,g-,i-,s-,t-
 " un-comment the follow setting to show new line, tab
 " set list
 "
-set expandtab
+" set expandtab
 set tabstop=2
 set shiftwidth=2
 set autoindent
 
-set cindent
+" set cindent
 set showmatch
 set so=10
 set ruler
 set nu
 
 " colorscheme desert
-colorscheme elflord
+" colorscheme elflord
+color monokai
 
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
