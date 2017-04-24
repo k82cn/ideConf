@@ -1,2 +1,4 @@
 # ideConf
-The configuration of IDE, e.g. emacs, vim, astyle and so on
+The configuration of vim as my editor
+
+
