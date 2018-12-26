@@ -17,38 +17,40 @@ set autoindent
 set showmatch
 set so=10
 set ruler
-set nu
+" set nu
 
 " colorscheme desert
 " colorscheme elflord
 color monokai
 
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
+" let Tlist_Show_One_File=1
+" let Tlist_Exit_OnlyWindow=1
 
-let g:winManagerWindowLayout='FileExplorer|TagList'
+" let g:winManagerWindowLayout='FileExplorer|TagList'
 
 nmap <c-l> :only<cr>
 
-nmap <c-t> :WMToggle<cr> 
+" if has("cscope")
+" 	set csto=0
+" 	set cst
+" 	set nocsverb
+" 	" add any database in current directory
+" 	if filereadable("cscope.out")
+" 		cs add cscope.out
+" 	endif
+" 
+" 	set csverb
+" 
+" endif
 
-if has("cscope")
-	set csto=0
-	set cst
-	set nocsverb
-	" add any database in current directory
-	if filereadable("cscope.out")
-		cs add cscope.out
-	endif
-
-	set csverb
-
-	nmap ]s :cs f s <C-R>=expand("<cword>")<CR><CR> :cw <CR><CR>
-	nmap ]r :cs reset <CR><CR>
-endif
+nmap ]s :cs f s <C-R>=expand("<cword>")<CR><CR> :cw <CR><CR>
+nmap ]r :cs reset <CR><CR>
 
 nmap 8 :cn <CR><CR>
 nmap 9 :cp <CR><CR>
 
 set autowrite
 
+call plug#begin()
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+call plug#end()
