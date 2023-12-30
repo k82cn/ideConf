@@ -17,7 +17,8 @@ set autoindent
 set showmatch
 set so=10
 set ruler
-" set nu
+set nu
+set colorcolumn=128
 
 " colorscheme desert
 " colorscheme elflord
